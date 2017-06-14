@@ -34,7 +34,10 @@ export default class MonthView implements IView {
 					class: [
 						this.$scope.keyboard && day.isSame(this.$scope.view.moment, 'day') ? 'highlighted' : '',
 						!!this.$scope.today && day.isSame(new Date(), 'day') ? 'today' : '',
-						!selectable || day.month() != month ? 'disabled' : isValidMoment(this.$ctrl.$modelValue) && day.isSame(this.$ctrl.$modelValue, 'day') ? 'selected' : ''
+						// >> изменено
+						day.month() != month ? 'another-months-day' : '',
+						!selectable ? 'disabled' : isValidMoment(this.$ctrl.$modelValue) && day.isSame(this.$ctrl.$modelValue, 'day') ? 'selected' : ''
+						// << изменено
 					].join(' ').trim(),
 					selectable: selectable
 				};
