@@ -1,4 +1,4 @@
-/*! Angular Moment Picker - v0.10.1 - http://indrimuska.github.io/angular-moment-picker - (c) 2015 Indri Muska - MIT */
+/*! Angular Moment Picker - v0.10.2 - http://indrimuska.github.io/angular-moment-picker - (c) 2015 Indri Muska - MIT */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -1061,8 +1061,10 @@ var MonthView = (function () {
                     "class": [
                         _this.$scope.keyboard && day.isSame(_this.$scope.view.moment, 'day') ? 'highlighted' : '',
                         !!_this.$scope.today && day.isSame(new Date(), 'day') ? 'today' : '',
+                        // >> изменено
                         day.month() != month ? 'another-months-day' : '',
                         !selectable ? 'disabled' : utility_1.isValidMoment(_this.$ctrl.$modelValue) && day.isSame(_this.$ctrl.$modelValue, 'day') ? 'selected' : ''
+                        // << изменено
                     ].join(' ').trim(),
                     selectable: selectable
                 };
